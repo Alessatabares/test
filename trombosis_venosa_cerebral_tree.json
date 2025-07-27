@@ -1,0 +1,147 @@
+{
+  "condition": "Trombosis venosa cerebral (TVC)",
+  "guideline_source": {
+    "title": "Diagnosis and Management of Cerebral Venous Thrombosis: A Statement for Healthcare Professionals",
+    "authors": "Saposnik G et al. (AHA/ASA)",
+    "year": "2011",
+    "url": "https://www.ahajournals.org/doi/10.1161/STROKEAHA.110.606558"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "Cefalea progresiva, crisis epil\u00e9pticas, signos de hipertensi\u00f3n intracraneal, focalidad neurol\u00f3gica con imagen sugestiva.",
+      "management": "RM cerebral con venograf\u00eda (MRV), anticoagulaci\u00f3n inmediata con heparina, ingreso a UCI si signos de herniaci\u00f3n."
+    },
+    "atypical": {
+      "description": "Confusi\u00f3n aislada, afasia, v\u00e9rtigo, psicosis, o s\u00edntomas subagudos de dif\u00edcil clasificaci\u00f3n.",
+      "management": "Alta sospecha cl\u00ednica con imagen avanzada (venograf\u00eda), descartar etiolog\u00edas infecciosas o autoinmunes.",
+      "key_additional_assessments": [
+        "Venograf\u00eda por RM o TAC con reconstrucci\u00f3n venosa.",
+        "Estudios de hipercoagulabilidad (prote\u00edna C/S, antitrombina, factor V Leiden, APLA).",
+        "Buscar foco infeccioso (otitis, mastoiditis, sinusitis)."
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "Cefalea progresiva",
+          "key": "cefalea_tvc",
+          "tag_explanation": "S\u00edntoma m\u00e1s frecuente. Empeora en d\u00edas. Aumenta presi\u00f3n intracraneal.",
+          "cluster_value": "\u2191\u2191 si con edema de papila o crisis"
+        },
+        {
+          "label": "Convulsiones (focales o generalizadas)",
+          "key": "convulsiones",
+          "tag_explanation": "Muy sugestivo en pacientes sin epilepsia previa.",
+          "cluster_value": "\u2191 con signos focales o imagen sugestiva"
+        },
+        {
+          "label": "D\u00e9ficit neurol\u00f3gico focal (paresia, afasia)",
+          "key": "deficit_focal",
+          "tag_explanation": "Puede simular ACV. Suele afectar regiones corticales.",
+          "cluster_value": "\u2191 con edema hemisf\u00e9rico o sangrado cortical at\u00edpico"
+        },
+        {
+          "label": "S\u00edntomas visuales o diplopia (par\u00e1lisis VI)",
+          "key": "diplopia",
+          "tag_explanation": "Secundario a hipertensi\u00f3n intracraneal. Indicador indirecto.",
+          "cluster_value": "\u2191 con cefalea y edema de papila"
+        }
+      ]
+    },
+    {
+      "group": "imagen y laboratorio",
+      "inputs": [
+        {
+          "label": "RM con venograf\u00eda (MRV) con ausencia de flujo",
+          "key": "mrv_defecto_flujo",
+          "tag_explanation": "Gold standard. Confirma trombosis venosa.",
+          "cluster_value": "Diagn\u00f3stico definitivo"
+        },
+        {
+          "label": "TC con contraste mostrando signo del tri\u00e1ngulo o cord\u00f3n",
+          "key": "tc_signo_cordon",
+          "tag_explanation": "Signo indirecto cl\u00e1sico en TC venosa.",
+          "cluster_value": "\u2191 con cefalea y convulsiones"
+        },
+        {
+          "label": "Edema hemisf\u00e9rico o hemorragia cortical at\u00edpica",
+          "key": "edema_cortical",
+          "tag_explanation": "Com\u00fan en TVC. Distribuci\u00f3n venosa no habitual.",
+          "cluster_value": "\u2191 con convulsiones y d\u00e9ficit focal"
+        },
+        {
+          "label": "Pruebas de hipercoagulabilidad positivas",
+          "key": "trombofilia",
+          "tag_explanation": "Identifica etiolog\u00eda subyacente. No es diagn\u00f3stico por s\u00ed sola.",
+          "cluster_value": "\u2191 si <50 a\u00f1os, historia familiar o TVC recurrente"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "cefalea_tvc",
+        "mrv_defecto_flujo",
+        "convulsiones"
+      ],
+      [
+        "deficit_focal",
+        "edema_cortical",
+        "tc_signo_cordon"
+      ]
+    ],
+    "minimum_required": 2
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "ACV arterial isqu\u00e9mico",
+      "key_exclusion_findings": [
+        "Distribuci\u00f3n arterial cl\u00e1sica",
+        "TC sin edema venoso",
+        "RM sin hemorragia cortical at\u00edpica"
+      ]
+    },
+    {
+      "condition": "Encefalitis herp\u00e9tica",
+      "key_exclusion_findings": [
+        "Fiebre, LCR con pleocitosis, PCR positiva",
+        "Afectaci\u00f3n temporal bilateral"
+      ]
+    },
+    {
+      "condition": "Tumor cerebral",
+      "key_exclusion_findings": [
+        "Lesi\u00f3n focal con efecto de masa progresivo",
+        "Captaci\u00f3n en anillo",
+        "Histolog\u00eda positiva"
+      ]
+    }
+  ],
+  "plan": {
+    "manejo_agudo": {
+      "acciones": [
+        "Anticoagulaci\u00f3n inmediata con heparina o HBPM (incluso si hay sangrado venoso)",
+        "Control de convulsiones si presentes",
+        "Monitoreo en UCI si deterioro o hipertensi\u00f3n endocraneana"
+      ]
+    },
+    "manejo_etiologico": {
+      "acciones": [
+        "Estudio de hipercoagulabilidad",
+        "Tratamiento de infecciones asociadas (ej. sinusitis)",
+        "Evaluar necesidad de anticoagulaci\u00f3n prolongada"
+      ]
+    },
+    "seguimiento": {
+      "acciones": [
+        "RM/MRV de control a las 3-6 semanas",
+        "Evaluaci\u00f3n neuropsicol\u00f3gica si compromiso cognitivo",
+        "Rehabilitaci\u00f3n individualizada seg\u00fan d\u00e9ficit"
+      ]
+    }
+  }
+}

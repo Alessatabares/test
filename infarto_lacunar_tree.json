@@ -1,0 +1,129 @@
+{
+  "condition": "Infarto lacunar",
+  "guideline_source": {
+    "title": "2021 AHA/ASA Guidelines for the Prevention of Stroke in Patients With Stroke and TIA",
+    "authors": "Kleindorfer DO et al.",
+    "year": "2021",
+    "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000375"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "D\u00e9ficit neurol\u00f3gico puro (motor o sensitivo) de instalaci\u00f3n s\u00fabita, sin alteraciones corticales, en pacientes con HTA o diabetes.",
+      "management": "TAC inicial para descartar hemorragia, RM con DWI para confirmar infarto profundo, antiplaquetarios y control de factores de riesgo."
+    },
+    "atypical": {
+      "description": "Inicio progresivo, s\u00edntomas fluctuantes o m\u00faltiples d\u00e9ficits leves sin signos corticales. Puede simular conversi\u00f3n o ACV emb\u00f3lico.",
+      "management": "Monitoreo cl\u00ednico con im\u00e1genes seriadas, excluir otras etiolog\u00edas con RM y angio-RM.",
+      "key_additional_assessments": [
+        "Evaluaci\u00f3n del territorio afectado por imagen.",
+        "Control riguroso de presi\u00f3n arterial y glucemia.",
+        "Monitoreo para progresi\u00f3n cl\u00ednica o recurrencias m\u00faltiples."
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "Hemiparesia pura (cara, brazo, pierna)",
+          "key": "hemiparesia_pura",
+          "tag_explanation": "Subtipo cl\u00e1sico. Alta especificidad para infarto en c\u00e1psula interna o corona radiata.",
+          "cluster_value": "\u2191\u2191 si sin afasia, neglect ni signos corticales"
+        },
+        {
+          "label": "S\u00edndrome sensitivo puro",
+          "key": "sindrome_sensitivo",
+          "tag_explanation": "Indica afectaci\u00f3n del t\u00e1lamo posterior. No hay debilidad ni disfasia.",
+          "cluster_value": "\u2191 si con TAC/RM con lesi\u00f3n en n\u00facleo posterolateral"
+        },
+        {
+          "label": "D\u00e9ficit sensitivo-motor puro",
+          "key": "sensitivo_motor",
+          "tag_explanation": "Combinaci\u00f3n frecuente. Compatible con lesi\u00f3n en brazo posterior de c\u00e1psula interna.",
+          "cluster_value": "\u2191\u2191 si sin desviaci\u00f3n ocular ni afasia"
+        }
+      ]
+    },
+    {
+      "group": "imagen y antecedentes",
+      "inputs": [
+        {
+          "label": "RM con lesi\u00f3n peque\u00f1a subcortical (<15mm)",
+          "key": "rm_lesion_pequena",
+          "tag_explanation": "Confirma infarto lacunar. No debe comprometer corteza.",
+          "cluster_value": "Diagn\u00f3stico confirmatorio con cl\u00ednica compatible"
+        },
+        {
+          "label": "Ausencia de signos corticales (afasia, neglect, desviaci\u00f3n ocular)",
+          "key": "sin_signos_corticales",
+          "tag_explanation": "Diferencia el infarto lacunar del emb\u00f3lico cortical.",
+          "cluster_value": "Requisito para diagn\u00f3stico cl\u00e1sico"
+        },
+        {
+          "label": "Historia de hipertensi\u00f3n arterial o diabetes",
+          "key": "hta_diabetes",
+          "tag_explanation": "Factores de riesgo m\u00e1s comunes de enfermedad de peque\u00f1os vasos.",
+          "cluster_value": "\u2191\u2191 con cl\u00ednica compatible y RM positiva"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "hemiparesia_pura",
+        "rm_lesion_pequena",
+        "sin_signos_corticales"
+      ],
+      [
+        "sensitivo_motor",
+        "hta_diabetes",
+        "rm_lesion_pequena"
+      ]
+    ],
+    "minimum_required": 2
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "Infarto emb\u00f3lico cortical",
+      "key_exclusion_findings": [
+        "Presencia de afasia, neglect, desviaci\u00f3n ocular",
+        "RM con lesi\u00f3n corticosubcortical"
+      ]
+    },
+    {
+      "condition": "Crisis epil\u00e9ptica con par\u00e1lisis de Todd",
+      "key_exclusion_findings": [
+        "Historia epil\u00e9ptica",
+        "Resoluci\u00f3n en minutos/horas",
+        "EEG anormal"
+      ]
+    },
+    {
+      "condition": "Conversi\u00f3n o par\u00e1lisis funcional",
+      "key_exclusion_findings": [
+        "Exploraci\u00f3n inconsistente",
+        "Imagen normal",
+        "Historia psiqui\u00e1trica"
+      ]
+    }
+  ],
+  "plan": {
+    "manejo_agudo": {
+      "acciones": [
+        "TAC inicial para excluir sangrado",
+        "Iniciar antiagregante (aspirina 160-325 mg)",
+        "Control agudo de presi\u00f3n arterial si >220/120 mmHg"
+      ]
+    },
+    "prevencion_recurrencia": {
+      "acciones": [
+        "Antiplaquetario a largo plazo",
+        "Estatinas de alta intensidad",
+        "Control estricto de HTA y diabetes",
+        "Rehabilitaci\u00f3n motora si hay secuelas"
+      ]
+    }
+  }
+}

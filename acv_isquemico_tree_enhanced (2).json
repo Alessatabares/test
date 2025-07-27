@@ -1,0 +1,164 @@
+{
+  "condition": "Accidente cerebrovascular isqu\u00e9mico agudo (ACV isqu\u00e9mico)",
+  "guideline_source": {
+    "title": "2021 AHA/ASA Guidelines for the Early Management of Patients With Acute Ischemic Stroke",
+    "authors": "Powers WJ et al.",
+    "year": "2021",
+    "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000375"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "Inicio s\u00fabito de debilidad facial o en extremidades, dificultad para hablar, alteraciones visuales o de coordinaci\u00f3n. Tiempo de inicio claro (<4.5h).",
+      "management": "Activaci\u00f3n inmediata del c\u00f3digo ACV, TAC sin contraste urgente, NIHSS, valorar para tromb\u00f3lisis/trombectom\u00eda."
+    },
+    "atypical": {
+      "description": "S\u00edntomas vagos, progresivos o fluctuantes. Alteraci\u00f3n del estado mental, s\u00edntomas bilaterales, v\u00e9rtigo aislado.",
+      "management": "Evaluar glucosa, imagen cerebral (TC/MRI), excluir m\u00edmicos (hipoglucemia, crisis, migra\u00f1a, conversi\u00f3n). Evaluar signos focales sutiles o signos de circulaci\u00f3n posterior.",
+      "key_additional_assessments": [
+        "RM cerebral si TC negativa pero alta sospecha cl\u00ednica.",
+        "Reevaluaci\u00f3n neurol\u00f3gica seriada.",
+        "Electrolitos, ECG y perfil t\u00f3xico/metab\u00f3lico si alteraci\u00f3n del nivel de conciencia."
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "Debilidad facial s\u00fabita",
+          "key": "debilidad_facial",
+          "tag_explanation": "Signo cardinal del ACV anterior. Alta especificidad si ocurre con debilidad de brazo.",
+          "cluster_value": "\u2191\u2191 si se acompa\u00f1a de hemiparesia y disartria"
+        },
+        {
+          "label": "Debilidad o entumecimiento unilateral",
+          "key": "hemiparesia",
+          "tag_explanation": "Muy sensible para ACV. Bajo valor aislado; esencial combinar con TAC/NIHSS.",
+          "cluster_value": "\u2191\u2191 con disartria, tiempo de inicio conocido, imagen positiva"
+        },
+        {
+          "label": "Alteraci\u00f3n del lenguaje (afasia/disartria)",
+          "key": "alteracion_lenguaje",
+          "tag_explanation": "Fuerte predictor de ACV hemisf\u00e9rico dominante. Mayor especificidad con hemiparesia.",
+          "cluster_value": "\u2191\u2191 si se combina con hemiparesia y TAC negativa a sangrado"
+        },
+        {
+          "label": "P\u00e9rdida visual o hemianopsia",
+          "key": "deficit_visual",
+          "tag_explanation": "Sugiere ACV occipital o de circulaci\u00f3n posterior. Valor limitado solo.",
+          "cluster_value": "\u2191 si con v\u00e9rtigo, marcha inestable o paresia"
+        },
+        {
+          "label": "V\u00e9rtigo o ataxia",
+          "key": "vertigo_ataxia",
+          "tag_explanation": "Frecuente en ACV cerebeloso. Bajo valor aislado. Necesario asociar a dismetr\u00eda, imagen.",
+          "cluster_value": "\u2191\u2191 con nistagmo direccional fijo o dismetr\u00eda"
+        },
+        {
+          "label": "Hora de inicio conocida",
+          "key": "inicio_conocido",
+          "tag_explanation": "Cr\u00edtica para definir elegibilidad a tromb\u00f3lisis. No tiene valor diagn\u00f3stico por s\u00ed sola.",
+          "cluster_value": "\u2191\u2191 si junto a TAC normal, NIHSS >4"
+        }
+      ]
+    },
+    {
+      "group": "examen f\u00edsico",
+      "inputs": [
+        {
+          "label": "Puntaje NIHSS",
+          "key": "nihss",
+          "tag_explanation": "Eval\u00faa severidad del ACV. Es gu\u00eda de manejo y elegibilidad a terapias.",
+          "cluster_value": "\u2191\u2191 si >6 con LVO, orienta a trombectom\u00eda"
+        }
+      ]
+    },
+    {
+      "group": "laboratorio e imagen",
+      "inputs": [
+        {
+          "label": "TAC cerebral sin contraste",
+          "key": "tac_sn",
+          "tag_explanation": "Permite excluir hemorragia. Es requisito para tPA.",
+          "cluster_value": "Obligatorio para toma de decisiones terap\u00e9uticas"
+        },
+        {
+          "label": "AngioTAC con oclusi\u00f3n de gran vaso",
+          "key": "angio_tac",
+          "tag_explanation": "Especificidad alta para trombectom\u00eda mec\u00e1nica.",
+          "cluster_value": "\u2191\u2191 si NIHSS >6 y ASPECTS >6"
+        },
+        {
+          "label": "Glucosa plasm\u00e1tica 50\u2013400 mg/dL",
+          "key": "glucosa",
+          "tag_explanation": "Descarta hipoglucemia como causa de s\u00edntomas tipo ACV.",
+          "cluster_value": "Obligatoria antes de tPA"
+        },
+        {
+          "label": "INR <1.7 si anticoagulado",
+          "key": "inr",
+          "tag_explanation": "Evita sangrado si se administra tromb\u00f3lisis.",
+          "cluster_value": "Requisito de seguridad para tPA"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "hemiparesia",
+        "debilidad_facial",
+        "alteracion_lenguaje",
+        "inicio_conocido",
+        "tac_sn",
+        "nihss"
+      ]
+    ],
+    "minimum_required": 4
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "Hipoglucemia",
+      "key_exclusion_findings": [
+        "Glucosa <50",
+        "Resoluci\u00f3n tras correcci\u00f3n"
+      ]
+    },
+    {
+      "condition": "Crisis con par\u00e1lisis postictal",
+      "key_exclusion_findings": [
+        "Historia de convulsi\u00f3n",
+        "RM/TAC sin lesiones",
+        "Mejor\u00eda r\u00e1pida"
+      ]
+    },
+    {
+      "condition": "Migra\u00f1a con aura",
+      "key_exclusion_findings": [
+        "S\u00edntomas visuales positivos",
+        "Historia personal",
+        "Im\u00e1genes normales"
+      ]
+    },
+    {
+      "condition": "Trastorno funcional (conversi\u00f3n)",
+      "key_exclusion_findings": [
+        "Exploraci\u00f3n inconsistente",
+        "Im\u00e1genes normales",
+        "Historia psiqui\u00e1trica"
+      ]
+    }
+  ],
+  "plan": {
+    "elegible_tpa": {
+      "tratamiento": "Alteplasa 0.9 mg/kg (m\u00e1x 90 mg) si <4.5 h desde inicio y sin contraindicaciones."
+    },
+    "elegible_trombectomia": {
+      "tratamiento": "Trombectom\u00eda mec\u00e1nica si oclusi\u00f3n proximal, NIHSS \u22656 y ventana <24h con tejido salvable."
+    },
+    "no_elegible": {
+      "tratamiento": "Ingreso a unidad neurovascular, aspirina en primeras 24h, prevenci\u00f3n secundaria y rehabilitaci\u00f3n."
+    }
+  }
+}

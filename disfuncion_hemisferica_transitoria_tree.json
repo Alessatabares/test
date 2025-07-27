@@ -1,0 +1,33 @@
+{
+  "condition": "S\u00edndrome de disfunci\u00f3n hemisf\u00e9rica transitoria (amaurosis fugaz, disfasia breve)",
+  "guideline_source": {
+    "title": "AHA/ASA Guidelines on Management of Patients With Transient Neurologic Symptoms",
+    "authors": "Easton JD et al.",
+    "year": "2009",
+    "url": "https://doi.org/10.1161/STROKEAHA.108.192218"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "Amaurosis fugaz o disfasia breve (<1h), resoluci\u00f3n completa.",
+      "management": "Evaluaci\u00f3n urgente de causa emb\u00f3lica. Doppler carot\u00eddeo, ECG, ABCD2."
+    },
+    "atypical": {
+      "description": "S\u00edntomas vagos, duraci\u00f3n >1h, sin factores de riesgo.",
+      "management": "RM con difusi\u00f3n, evaluaci\u00f3n card\u00edaca y de vasos supraa\u00f3rticos.",
+      "key_additional_assessments": [
+        "RM con difusi\u00f3n",
+        "ABCD2",
+        "AngioTAC/eco carot\u00eddeo",
+        "Holter 72h"
+      ]
+    }
+  },
+  "plan": {
+    "bajo_riesgo": {
+      "tratamiento": "Evaluaci\u00f3n ambulatoria r\u00e1pida, antiplaquetarios, doppler carot\u00eddeo y ECG basal."
+    },
+    "alto_riesgo": {
+      "tratamiento": "Hospitalizaci\u00f3n, antiplaquetarios o anticoagulaci\u00f3n, eco transesof\u00e1gico, considerar cierre FOP o endarterectom\u00eda."
+    }
+  }
+}

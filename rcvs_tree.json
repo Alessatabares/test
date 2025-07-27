@@ -1,0 +1,128 @@
+{
+  "condition": "S\u00edndrome de vasoconstricci\u00f3n cerebral reversible (RCVS)",
+  "guideline_source": {
+    "title": "Calabrese LH et al. Reversible cerebral vasoconstriction syndrome: updates and new concepts",
+    "authors": "Calabrese LH, Singhal AB, et al.",
+    "year": "2019",
+    "url": "https://doi.org/10.1016/j.jns.2019.01.039"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "Cefalea centinela en trueno (thunderclap headache), desencadenada por esfuerzo, relaciones sexuales o estr\u00e9s, con imagen que muestra vasoconstricci\u00f3n segmentaria multifocal.",
+      "management": "Descartar HSA. Realizar angioTAC o angioRM. Monitorear por complicaciones: convulsiones, infartos, hemorragias corticales superficiales (cSAH)."
+    },
+    "atypical": {
+      "description": "Inicio m\u00e1s gradual de cefalea o s\u00edntomas neurol\u00f3gicos focales sin cefalea evidente, en paciente con uso de simpaticomim\u00e9ticos, postparto o vasculopat\u00eda sist\u00e9mica.",
+      "management": "RM y angioRM seriadas. Considerar diagn\u00f3stico diferencial con vasculitis, PRES o trombosis venosa. Importante monitoreo de evoluci\u00f3n reversibilidad vascular.",
+      "key_additional_assessments": [
+        "AngioTAC o angioRM repetida en 1-3 semanas",
+        "RM FLAIR y SWI para hemorragias corticales superficiales (cSAH)",
+        "LCR para descartar vasculitis primaria",
+        "Control de presi\u00f3n arterial y abstenci\u00f3n de vasoconstrictores"
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "Cefalea centinela en trueno",
+          "key": "cefalea_trueno",
+          "tag_explanation": "Dolor s\u00fabito, pico en <1 minuto. Hallazgo m\u00e1s caracter\u00edstico del RCVS.",
+          "cluster_value": "\u2191\u2191\u2191 si recurrente o desencadenada"
+        },
+        {
+          "label": "Desencadenantes (sexo, esfuerzo, estr\u00e9s)",
+          "key": "desencadenante_rcvs",
+          "tag_explanation": "Desencadenantes frecuentes en RCVS. Deben explorarse activamente.",
+          "cluster_value": "\u2191\u2191 con cefalea en trueno"
+        },
+        {
+          "label": "D\u00e9ficit neurol\u00f3gico focal transitorio o permanente",
+          "key": "deficit_rcvs",
+          "tag_explanation": "Puede ser causado por infarto, hemorragia cortical o vasoespasmo.",
+          "cluster_value": "\u2191 si acompa\u00f1ado de hallazgos imagenol\u00f3gicos"
+        },
+        {
+          "label": "Convulsiones",
+          "key": "convulsiones_rcvs",
+          "tag_explanation": "Puede ser manifestaci\u00f3n inicial en RCVS complicado.",
+          "cluster_value": "\u2191 con cSAH o edema vasog\u00e9nico"
+        }
+      ]
+    },
+    {
+      "group": "imagen",
+      "inputs": [
+        {
+          "label": "AngioTAC o angioRM con vasoconstricci\u00f3n multifocal",
+          "key": "angio_vasoespasmo",
+          "tag_explanation": "Hallazgo clave. Vasoespasmo reversible es diagn\u00f3stico.",
+          "cluster_value": "\u2191\u2191\u2191 con cefalea en trueno"
+        },
+        {
+          "label": "RM con cSAH o infarto",
+          "key": "rm_hemorragia_cortical",
+          "tag_explanation": "Complicaci\u00f3n com\u00fan en RCVS. Suele ser cortical, no profunda.",
+          "cluster_value": "\u2191\u2191 si hallazgo reciente"
+        },
+        {
+          "label": "LCR sin pleocitosis o proteinorraquia",
+          "key": "lcr_normal",
+          "tag_explanation": "Ayuda a excluir vasculitis primaria del SNC.",
+          "cluster_value": "\u2191 con hallazgos vasculares reversibles"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "cefalea_trueno",
+        "angio_vasoespasmo",
+        "rm_hemorragia_cortical"
+      ],
+      [
+        "cefalea_trueno",
+        "desencadenante_rcvs",
+        "angio_vasoespasmo"
+      ]
+    ],
+    "minimum_required": 3
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "Hemorragia subaracnoidea (HSA)",
+      "key_exclusion_findings": [
+        "Sangre en cisternas basales",
+        "LCR xantocr\u00f3mico",
+        "RM/TAC positiva en primeras 6h"
+      ]
+    },
+    {
+      "condition": "Vasculitis primaria del SNC",
+      "key_exclusion_findings": [
+        "LCR inflamatorio",
+        "angiograf\u00eda con vasos truncados persistentes",
+        "evoluci\u00f3n progresiva sin reversi\u00f3n"
+      ]
+    },
+    {
+      "condition": "S\u00edndrome PRES",
+      "key_exclusion_findings": [
+        "Edema occipital bilateral sin vasoespasmo",
+        "Presi\u00f3n arterial muy elevada",
+        "ausencia de cefalea centinela"
+      ]
+    }
+  ],
+  "plan": {
+    "confirmado": {
+      "tratamiento": "Suspender factores desencadenantes, control de PA, calcioantagonistas orales (nimodipino), evitar anticoagulaci\u00f3n. Repetir angioTAC en 1\u20133 semanas."
+    },
+    "sospecha_inicial": {
+      "tratamiento": "Hospitalizar, monitoreo neurol\u00f3gico, neuroimagen secuencial y excluir vasculitis o HSA."
+    }
+  }
+}

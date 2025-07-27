@@ -1,0 +1,131 @@
+{
+  "condition": "Estenosis de car\u00f3tida interna o vertebral sintom\u00e1tica",
+  "guideline_source": {
+    "title": "2021 AHA/ASA Guidelines for the Prevention of Stroke in Patients With Stroke and TIA",
+    "authors": "Kleindorfer DO et al.",
+    "year": "2021",
+    "url": "https://www.ahajournals.org/doi/full/10.1161/STR.0000000000000375"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "D\u00e9ficit neurol\u00f3gico focal transitorio (hemiparesia, afasia, amaurosis fugaz) con hallazgos de estenosis significativa en car\u00f3tida o arteria vertebral en estudios de imagen.",
+      "management": "Doppler o angio-TC/MR, antiagregaci\u00f3n, correcci\u00f3n de factores de riesgo vascular, endarterectom\u00eda o stent si indicado."
+    },
+    "atypical": {
+      "description": "V\u00e9rtigo, inestabilidad, s\u00edncope o deterioro cognitivo leve con estenosis descubierta incidentalmente.",
+      "management": "Estudio de perfusi\u00f3n cerebral, angio-RM, evaluaci\u00f3n neurovascular especializada. En casos dudosos repetir im\u00e1genes o realizar doppler transcraneal.",
+      "key_additional_assessments": [
+        "Doppler de vasos cervicales y transcraneal.",
+        "Angio-RM o angio-TC con cuantificaci\u00f3n de % de estenosis.",
+        "Evaluar riesgo-beneficio quir\u00fargico si estenosis \u226570%."
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "Amaurosis fugaz (ceguera monocular transitoria)",
+          "key": "amaurosis_fugaz",
+          "tag_explanation": "Cl\u00e1sico de estenosis carot\u00eddea ipsilateral. Alta especificidad si con soplo carot\u00eddeo.",
+          "cluster_value": "\u2191\u2191 con doppler carotideo positivo"
+        },
+        {
+          "label": "D\u00e9ficit motor o sensitivo transitorio",
+          "key": "deficit_transitorio",
+          "tag_explanation": "Sugerente de AIT. Alto valor si <1h duraci\u00f3n y recuperaci\u00f3n completa.",
+          "cluster_value": "\u2191\u2191 con estenosis carot\u00eddea o vertebral >70%"
+        },
+        {
+          "label": "V\u00e9rtigo o disartria transitoria",
+          "key": "vertebrobasilar",
+          "tag_explanation": "Sugiere compromiso de circulaci\u00f3n posterior. Requiere angio imagen.",
+          "cluster_value": "\u2191 si asociado a imagen vertebral positiva"
+        }
+      ]
+    },
+    {
+      "group": "imagen y pruebas funcionales",
+      "inputs": [
+        {
+          "label": "Doppler carot\u00eddeo con estenosis \u226570%",
+          "key": "doppler_carotideo",
+          "tag_explanation": "Herramienta primaria no invasiva para detectar estenosis significativa.",
+          "cluster_value": "\u2191\u2191 si s\u00edntomas hemisf\u00e9ricos ipsilaterales recientes"
+        },
+        {
+          "label": "Angio-TC o angio-RM con estenosis confirmada",
+          "key": "angio_estenosis",
+          "tag_explanation": "Confirma localizaci\u00f3n, grado y planifica intervenci\u00f3n.",
+          "cluster_value": "\u2191\u2191 con s\u00edntomas recientes"
+        },
+        {
+          "label": "Soplo carot\u00eddeo al examen f\u00edsico",
+          "key": "soplo_carotideo",
+          "tag_explanation": "Hallazgo cl\u00ednico orientador. Bajo valor solo, necesita imagen.",
+          "cluster_value": "\u2191 si asociado a s\u00edntomas hemisf\u00e9ricos"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "deficit_transitorio",
+        "doppler_carotideo",
+        "angio_estenosis"
+      ],
+      [
+        "amaurosis_fugaz",
+        "soplo_carotideo",
+        "angio_estenosis"
+      ]
+    ],
+    "minimum_required": 2
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "Migra\u00f1a con aura",
+      "key_exclusion_findings": [
+        "S\u00edntomas positivos visuales",
+        "Inicio progresivo",
+        "RM normal"
+      ]
+    },
+    {
+      "condition": "Convulsi\u00f3n focal",
+      "key_exclusion_findings": [
+        "Movimientos involuntarios",
+        "Lenguaje preservado",
+        "EEG anormal"
+      ]
+    },
+    {
+      "condition": "Hipotensi\u00f3n ortost\u00e1tica",
+      "key_exclusion_findings": [
+        "Relaci\u00f3n con cambios posturales",
+        "Sin hallazgos focales",
+        "Doppler normal"
+      ]
+    }
+  ],
+  "plan": {
+    "estenosis_significativa": {
+      "acciones": [
+        "Antiagregaci\u00f3n (aspirina 75-325 mg)",
+        "Estatinas intensivas",
+        "Control de presi\u00f3n arterial y glucosa",
+        "Valoraci\u00f3n para endarterectom\u00eda si estenosis \u226570% y s\u00edntomas recientes (<2 semanas)",
+        "Alternativa: stent carot\u00eddeo si alto riesgo quir\u00fargico"
+      ]
+    },
+    "estenosis_moderada_o_incidental": {
+      "acciones": [
+        "Seguimiento imagenol\u00f3gico anual",
+        "Modificaci\u00f3n agresiva de factores de riesgo",
+        "No intervenci\u00f3n quir\u00fargica si asintom\u00e1tico o <50%"
+      ]
+    }
+  }
+}

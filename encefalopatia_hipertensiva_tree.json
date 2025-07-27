@@ -1,0 +1,33 @@
+{
+  "condition": "Encefalopat\u00eda hipertensiva",
+  "guideline_source": {
+    "title": "2022 AHA Scientific Statement on Management of Hypertensive Emergencies",
+    "authors": "Peixoto AJ et al.",
+    "year": "2022",
+    "url": "https://www.ahajournals.org/doi/10.1161/HYP.0000000000000212"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "Cefalea intensa, n\u00e1useas, v\u00f3mitos, confusi\u00f3n o disminuci\u00f3n del nivel de conciencia, presi\u00f3n arterial severamente elevada (\u2265180/120 mmHg).",
+      "management": "Evaluaci\u00f3n inmediata con TAC para descartar hemorragia. Reducci\u00f3n cuidadosa de la PA con antihipertensivos IV en UCI."
+    },
+    "atypical": {
+      "description": "S\u00edntomas neurol\u00f3gicos focales, convulsiones, visi\u00f3n borrosa, sin antecedentes conocidos de HTA.",
+      "management": "Considerar diagn\u00f3stico diferencial con ACV, eclampsia, PRES. RM puede revelar edema vasog\u00e9nico reversible.",
+      "key_additional_assessments": [
+        "RM cerebral para descartar PRES",
+        "Electrolitos y funci\u00f3n renal",
+        "Fondo de ojo (retinopat\u00eda grado III\u2013IV)",
+        "ECG para evidencia de da\u00f1o a \u00f3rgano blanco"
+      ]
+    }
+  },
+  "plan": {
+    "emergencia_hipertensiva_confirmada": {
+      "tratamiento": "Reducir PAS en 25% en primeras 1\u20132 h con labetalol o nicardipino IV. Monitoreo intensivo en UCI."
+    },
+    "sospecha_sin_confirmaci\u00f3n_imagenol\u00f3gica": {
+      "tratamiento": "Iniciar control emp\u00edrico de PA, monitorizaci\u00f3n neurol\u00f3gica y repetir imagen si s\u00edntomas persisten."
+    }
+  }
+}

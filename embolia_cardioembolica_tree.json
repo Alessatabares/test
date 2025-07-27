@@ -1,0 +1,138 @@
+{
+  "condition": "Embolia cardioemb\u00f3lica",
+  "guideline_source": {
+    "title": "2021 AHA/ASA Guideline for the Prevention of Stroke in Patients With Cardioembolic Risk",
+    "authors": "Kleindorfer DO et al.",
+    "year": "2021",
+    "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000375"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "Inicio s\u00fabito de d\u00e9ficit neurol\u00f3gico severo (afasia, hemiparesia, hemianopsia), sin antecedentes vasculares locales, con m\u00faltiples territorios involucrados o infarto hemorr\u00e1gico.",
+      "management": "Realizar TAC/RM y angioTAC para confirmar territorio afectado. Solicitar ECG, Holter y ecocardiograma transesof\u00e1gico para b\u00fasqueda de fuente embol\u00edgena."
+    },
+    "atypical": {
+      "description": "D\u00e9ficits fluctuantes, s\u00edntomas globales o crisis convulsiva de inicio, con recuperaci\u00f3n parcial. Puede simular ACV lacunar si embolia distal.",
+      "management": "Evaluar con RM de difusi\u00f3n, realizar estudio card\u00edaco completo si no hay factores vasculares. Sospechar en pacientes j\u00f3venes con FOP o ancianos con FA.",
+      "key_additional_assessments": [
+        "Holter 72h o Loop Recorder",
+        "Ecocardiograma transesof\u00e1gico",
+        "RM con difusi\u00f3n",
+        "TAC de t\u00f3rax si endocarditis"
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "D\u00e9ficit s\u00fabito y severo (afasia, hemiparesia)",
+          "key": "deficit_severo_s\u00fabito",
+          "tag_explanation": "Com\u00fan en eventos emb\u00f3licos. Alto valor si sin antecedentes vasculares.",
+          "cluster_value": "\u2191\u2191 con AF o eco positivo"
+        },
+        {
+          "label": "S\u00edntomas en m\u00faltiples territorios vasculares",
+          "key": "territorios_multiples",
+          "tag_explanation": "Sospecha alta de origen emb\u00f3lico cuando hay lesiones en ambos hemisferios o hemisferio + cerebelo.",
+          "cluster_value": "\u2191\u2191\u2191 con RM m\u00faltiple"
+        },
+        {
+          "label": "Fluctuaci\u00f3n de s\u00edntomas o recuperaci\u00f3n parcial r\u00e1pida",
+          "key": "fluctuacion_sintomas",
+          "tag_explanation": "Sugerente de embolia transitoria o fragmentada.",
+          "cluster_value": "\u2191 con FA o FOP conocido"
+        },
+        {
+          "label": "Convulsi\u00f3n de inicio",
+          "key": "convulsion_inicio",
+          "tag_explanation": "No es com\u00fan, pero posible en embolia cortical. Aumenta si es multifocal.",
+          "cluster_value": "\u2191 si con RM cortical y sin HTA"
+        }
+      ]
+    },
+    {
+      "group": "estudios complementarios",
+      "inputs": [
+        {
+          "label": "FA en ECG o Holter",
+          "key": "fibrilacion_detectada",
+          "tag_explanation": "Principal causa de embolia cardioemb\u00f3lica. Confirmaci\u00f3n diagn\u00f3stica clave.",
+          "cluster_value": "\u2191\u2191\u2191 si sin lesiones ateroscler\u00f3ticas"
+        },
+        {
+          "label": "Trombo en aur\u00edcula o ventr\u00edculo en ECO",
+          "key": "trombo_card\u00edaco",
+          "tag_explanation": "Demostraci\u00f3n directa de fuente emb\u00f3lica.",
+          "cluster_value": "\u2191\u2191\u2191"
+        },
+        {
+          "label": "Infarto hemorr\u00e1gico en imagen",
+          "key": "infarto_hemorragico",
+          "tag_explanation": "M\u00e1s frecuente en origen emb\u00f3lico. Menor en lacunares.",
+          "cluster_value": "\u2191 con FA o eco positivo"
+        },
+        {
+          "label": "RM con infartos en m\u00faltiples territorios",
+          "key": "rm_multi_territorial",
+          "tag_explanation": "Sospecha alta de embolia cardiaca o arterio-arterial.",
+          "cluster_value": "\u2191\u2191 si sin placas carot\u00eddeas"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "deficit_severo_s\u00fabito",
+        "territorios_multiples",
+        "fibrilacion_detectada",
+        "trombo_card\u00edaco"
+      ],
+      [
+        "deficit_severo_s\u00fabito",
+        "rm_multi_territorial",
+        "infarto_hemorragico"
+      ]
+    ],
+    "minimum_required": 3
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "ACV aterotromb\u00f3tico",
+      "key_exclusion_findings": [
+        "Placas ateromatosas carot\u00eddeas significativas",
+        "Evento localizado",
+        "Estrechamiento focal en angioTAC"
+      ]
+    },
+    {
+      "condition": "ACV lacunar",
+      "key_exclusion_findings": [
+        "D\u00e9ficit motor puro",
+        "NIHSS bajo",
+        "RM profunda sin cortical"
+      ]
+    },
+    {
+      "condition": "Migra\u00f1a con aura",
+      "key_exclusion_findings": [
+        "S\u00edntomas positivos visuales",
+        "Historia previa",
+        "Im\u00e1genes normales"
+      ]
+    }
+  ],
+  "plan": {
+    "confirmado": {
+      "tratamiento": "Anticoagulaci\u00f3n con DOAC o AVK seg\u00fan etiolog\u00eda (ej. FA, trombo mural, v\u00e1lvula prot\u00e9sica). Educaci\u00f3n en adherencia, control de INR si necesario."
+    },
+    "sospechoso": {
+      "tratamiento": "Iniciar antiplaquetario mientras se completa estudio. Considerar monitorizaci\u00f3n prolongada y ecocardiograf\u00eda transesof\u00e1gica."
+    },
+    "asociado a FOP o embolia parad\u00f3jica": {
+      "tratamiento": "Evaluar cierre percut\u00e1neo si edad <60 y FOP grande con cortocircuito derecho-izquierdo confirmado."
+    }
+  }
+}

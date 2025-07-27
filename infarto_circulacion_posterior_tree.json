@@ -1,0 +1,35 @@
+{
+  "condition": "Infarto de circulaci\u00f3n posterior (tronco encef\u00e1lico / cerebelo)",
+  "guideline_source": {
+    "title": "AHA/ASA Scientific Statement on Posterior Circulation Stroke",
+    "authors": "Caplan LR, Schmahmann JD, et al.",
+    "year": "2020",
+    "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000257"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "Inicio s\u00fabito de v\u00e9rtigo, ataxia, disartria, visi\u00f3n doble o nistagmo; s\u00edntomas cruzados (ej. hemiparesia contralateral + par\u00e1lisis facial ipsilateral).",
+      "management": "Imagen urgente (TAC o mejor RM con difusi\u00f3n). NIHSS puede subestimar. Evaluar signos de circulaci\u00f3n posterior: prueba de impulso cef\u00e1lico, nistagmo, test de skew (HINTS)."
+    },
+    "atypical": {
+      "description": "S\u00edntomas aislados como v\u00e9rtigo, hipoestesia facial, ca\u00edda s\u00fabita o solo inestabilidad.",
+      "management": "Sospecha cl\u00ednica alta en pacientes con factores vasculares. Evaluar HINTS, realizar RM si TAC es normal. Valorar doppler vertebral, angioTAC y monitoreo card\u00edaco si m\u00faltiples territorios.",
+      "key_additional_assessments": [
+        "RM cerebral con difusi\u00f3n",
+        "HINTS exam (impulso cef\u00e1lico, nistagmo, test de skew)",
+        "Holter o monitoreo extendido si cardioembolia sospechada"
+      ]
+    }
+  },
+  "plan": {
+    "candidato_trombolisis": {
+      "tratamiento": "Administrar alteplasa si <4.5h desde inicio, TAC sin sangrado y sin contraindicaci\u00f3n."
+    },
+    "candidato_trombectomia": {
+      "tratamiento": "Trombectom\u00eda si oclusi\u00f3n vertebrobasilar, NIHSS elevado y RM muestra tejido viable."
+    },
+    "manejo_medico": {
+      "tratamiento": "Admisi\u00f3n a unidad neurovascular, antiagregaci\u00f3n, control de presi\u00f3n, rehabilitaci\u00f3n precoz."
+    }
+  }
+}

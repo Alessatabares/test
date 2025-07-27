@@ -1,0 +1,151 @@
+{
+  "condition": "Hemorragia intracerebral espont\u00e1nea (HIC)",
+  "guideline_source": {
+    "title": "2022 AHA/ASA Guidelines for the Management of Spontaneous Intracerebral Hemorrhage",
+    "authors": "Hemphill JC et al.",
+    "year": "2022",
+    "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000407"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "D\u00e9ficit neurol\u00f3gico s\u00fabito con disminuci\u00f3n del nivel de conciencia, cefalea intensa, n\u00e1useas/v\u00f3mito, hipertensi\u00f3n.",
+      "management": "Tomograf\u00eda urgente, estabilizaci\u00f3n hemodin\u00e1mica, control de presi\u00f3n arterial y manejo en UCI."
+    },
+    "atypical": {
+      "description": "S\u00edntomas progresivos, pacientes j\u00f3venes, sin hipertensi\u00f3n previa, cefalea aislada.",
+      "management": "RMN para descartar malformaciones, angiograf\u00eda si se sospecha causa estructural.",
+      "key_additional_assessments": [
+        "Evaluar funci\u00f3n hep\u00e1tica y coagulaci\u00f3n.",
+        "Estudios de sustancia t\u00f3xica (coca\u00edna, anfetaminas).",
+        "RM cerebral y angio-RM si paciente joven o sin factores de riesgo t\u00edpicos."
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "Inicio s\u00fabito de d\u00e9ficit neurol\u00f3gico",
+          "key": "inicio_subito_deficit"
+        },
+        {
+          "label": "Cefalea intensa s\u00fabita",
+          "key": "cefalea_subita"
+        },
+        {
+          "label": "N\u00e1usea o v\u00f3mito",
+          "key": "nausea_vomito"
+        },
+        {
+          "label": "Alteraci\u00f3n del nivel de conciencia",
+          "key": "glasgow_bajo"
+        }
+      ]
+    },
+    {
+      "group": "examen f\u00edsico",
+      "inputs": [
+        {
+          "label": "Presi\u00f3n arterial >180/110 mmHg",
+          "key": "hta_aguda"
+        },
+        {
+          "label": "Glasgow <13 al ingreso",
+          "key": "glasgow_score"
+        }
+      ]
+    },
+    {
+      "group": "imagen y laboratorio",
+      "inputs": [
+        {
+          "label": "TAC craneal con hemorragia parenquimatosa",
+          "key": "tac_con_sangrado"
+        },
+        {
+          "label": "INR >1.5 o uso de anticoagulantes",
+          "key": "anticoagulantes"
+        },
+        {
+          "label": "Placa de t\u00f3xicos positiva (anfetamina, coca\u00edna)",
+          "key": "toxicologia"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "tac_con_sangrado",
+        "hta_aguda",
+        "glasgow_bajo"
+      ],
+      [
+        "inicio_subito_deficit",
+        "cefalea_subita",
+        "glasgow_score",
+        "tac_con_sangrado"
+      ]
+    ],
+    "minimum_required": 3
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "ACV isqu\u00e9mico con transformaci\u00f3n hemorr\u00e1gica",
+      "key_exclusion_findings": [
+        "Cl\u00ednica progresiva",
+        "TAC inicial isqu\u00e9mica",
+        "Ausencia de hipertensi\u00f3n severa"
+      ]
+    },
+    {
+      "condition": "Hemorragia subaracnoidea",
+      "key_exclusion_findings": [
+        "Cefalea centinela",
+        "Signos men\u00edngeos",
+        "Sangrado en cisternas o surcos"
+      ]
+    },
+    {
+      "condition": "Trauma craneal",
+      "key_exclusion_findings": [
+        "Historia de ca\u00edda o golpe",
+        "Fractura craneal",
+        "Sangrado subdural"
+      ]
+    },
+    {
+      "condition": "Tumor cerebral sangrante",
+      "key_exclusion_findings": [
+        "Historia de c\u00e1ncer",
+        "Lesi\u00f3n expansiva en imagen",
+        "Sangrado peritumoral"
+      ]
+    }
+  ],
+  "plan": {
+    "manejo_inicial": {
+      "acciones": [
+        "TAC urgente",
+        "Monitorizaci\u00f3n en UCI",
+        "Control de TA objetivo <140 mmHg",
+        "Correcci\u00f3n de coagulopat\u00edas"
+      ]
+    },
+    "manejo_quirurgico": {
+      "indicaciones": [
+        "Hematoma cerebeloso >3 cm con deterioro",
+        "Hematoma lobar superficial con efecto de masa",
+        "Hidrocefalia obstructiva por IV ventr\u00edculo"
+      ]
+    },
+    "cuidados_medicos": {
+      "acciones": [
+        "Evitar hiperglucemia, fiebre y convulsiones",
+        "Rehabilitaci\u00f3n temprana",
+        "Evaluaci\u00f3n neurol\u00f3gica seriada"
+      ]
+    }
+  }
+}

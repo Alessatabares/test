@@ -1,0 +1,36 @@
+{
+  "condition": "S\u00edndrome de arteria cerebral anterior o posterior",
+  "guideline_source": {
+    "title": "AHA/ASA Guidelines for the Early Management of Acute Ischemic Stroke",
+    "authors": "Powers WJ et al.",
+    "year": "2021",
+    "url": "https://doi.org/10.1161/STR.0000000000000375"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "D\u00e9ficit neurol\u00f3gico s\u00fabito con s\u00edntomas espec\u00edficos seg\u00fan territorio: ACA (debilidad crural, abulia, incontinencia); PCA (hemianopsia hom\u00f3nima, alexia sin agrafia, amnesia).",
+      "management": "TAC sin contraste inicial, seguido de angioTAC y RM de difusi\u00f3n para confirmar el territorio afectado."
+    },
+    "atypical": {
+      "description": "S\u00edntomas sutiles como cambios conductuales (ACA) o d\u00e9ficit visual parcial (PCA) sin otros signos acompa\u00f1antes.",
+      "management": "Evaluar con RM si TAC negativa. Valoraci\u00f3n neuropsicol\u00f3gica si sospecha de afectaci\u00f3n medial frontal o del l\u00f3bulo occipital.",
+      "key_additional_assessments": [
+        "RM con difusi\u00f3n",
+        "AngioTAC cerebral",
+        "Examen campim\u00e9trico si sospecha de hemianopsia",
+        "Evaluaci\u00f3n cognitiva si sospecha ACA"
+      ]
+    }
+  },
+  "plan": {
+    "elegible_tpa": {
+      "tratamiento": "Administrar alteplasa si <4.5h desde inicio y sin contraindicaciones."
+    },
+    "elegible_trombectomia": {
+      "tratamiento": "Considerar si oclusi\u00f3n de gran vaso visible en angioTAC y d\u00e9ficit cl\u00ednico significativo."
+    },
+    "no_elegible": {
+      "tratamiento": "Antiplaquetarios, rehabilitaci\u00f3n y control de factores de riesgo."
+    }
+  }
+}

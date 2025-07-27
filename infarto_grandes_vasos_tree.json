@@ -1,0 +1,149 @@
+{
+  "condition": "Infarto de grandes vasos (MCA/ACA/PCA)",
+  "guideline_source": {
+    "title": "2021 AHA/ASA Guidelines for the Early Management of Acute Ischemic Stroke",
+    "authors": "Powers WJ et al.",
+    "year": "2021",
+    "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000375"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "D\u00e9ficit s\u00fabito severo: hemiplej\u00eda, afasia, neglect, hemianopsia; compatible con oclusi\u00f3n de ACM, ACA o PCA.",
+      "management": "TAC inicial, angioTAC o angioRM para evaluar oclusi\u00f3n. Candidatos a tromb\u00f3lisis y trombectom\u00eda si elegibles."
+    },
+    "atypical": {
+      "description": "D\u00e9ficits parciales o fluctuantes, s\u00edntomas progresivos, alteraci\u00f3n visual aislada (PCA), paresia crural (ACA).",
+      "management": "RM con difusi\u00f3n para confirmar si TAC negativa. AngioTAC para valorar oclusi\u00f3n. Excluir mimetismos y valorar perfusi\u00f3n cerebral.",
+      "key_additional_assessments": [
+        "AngioTAC o AngioRM de vasos intracraneales",
+        "RM con difusi\u00f3n para detecci\u00f3n precoz",
+        "Evaluaci\u00f3n hemodin\u00e1mica si sospecha de penumbra isqu\u00e9mica"
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "Hemiparesia grave s\u00fabita",
+          "key": "hemiparesia_grave",
+          "tag_explanation": "Signo cardinal de oclusi\u00f3n de ACM. Alta sensibilidad en hemisferio dominante.",
+          "cluster_value": "\u2191\u2191 con afasia y desviaci\u00f3n ocular"
+        },
+        {
+          "label": "Afasia (Broca, Wernicke o global)",
+          "key": "afasia_grande",
+          "tag_explanation": "Espec\u00edfica de hemisferio dominante (MCA). Diagn\u00f3stico cl\u00ednico fuerte.",
+          "cluster_value": "\u2191\u2191 con hemiparesia derecha (en diestros)"
+        },
+        {
+          "label": "Negligencia (heminegligencia contralateral)",
+          "key": "neglect",
+          "tag_explanation": "Sugiere afectaci\u00f3n parietal derecha (MCA no dominante).",
+          "cluster_value": "\u2191 con hemianopsia o hemiparesia izquierda"
+        },
+        {
+          "label": "Hemianopsia hom\u00f3nima",
+          "key": "hemianopsia",
+          "tag_explanation": "Presente en infartos de ACM o PCA. Mejora sensibilidad en cl\u00faster.",
+          "cluster_value": "\u2191 con afasia o neglect"
+        },
+        {
+          "label": "Debilidad crural aislada",
+          "key": "debilidad_crural",
+          "tag_explanation": "Compatible con infarto de ACA. Menor frecuencia, menos severo.",
+          "cluster_value": "\u2191 con incontinencia y abulia"
+        },
+        {
+          "label": "P\u00e9rdida visual cortical",
+          "key": "deficit_visual_pca",
+          "tag_explanation": "Compatible con infarto de PCA. Puede pasar desapercibido sin campimetr\u00eda.",
+          "cluster_value": "\u2191\u2191 con alexia sin agrafia o amnesia"
+        }
+      ]
+    },
+    {
+      "group": "imagen",
+      "inputs": [
+        {
+          "label": "TAC sin contraste sin hemorragia",
+          "key": "tac_sn_negativa",
+          "tag_explanation": "Requisito para iniciar tromb\u00f3lisis. Puede ser normal en primeras horas.",
+          "cluster_value": "Obligatorio antes de tPA"
+        },
+        {
+          "label": "AngioTAC muestra oclusi\u00f3n de ACM/ACA/PCA",
+          "key": "angio_occlusion",
+          "tag_explanation": "Confirma infarto de gran vaso. Clave para trombectom\u00eda.",
+          "cluster_value": "\u2191\u2191\u2191 con NIHSS \u22656"
+        },
+        {
+          "label": "RM con difusi\u00f3n positiva en territorio vascular definido",
+          "key": "rm_territorial",
+          "tag_explanation": "Visualiza la extensi\u00f3n y localizaci\u00f3n exacta del infarto.",
+          "cluster_value": "\u2191\u2191 si coincide con s\u00edntomas"
+        },
+        {
+          "label": "NIHSS \u2265 6",
+          "key": "nihss_alto",
+          "tag_explanation": "Suele reflejar severidad por oclusi\u00f3n de gran vaso.",
+          "cluster_value": "\u2191 con imagen vascular positiva"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "hemiparesia_grave",
+        "afasia_grande",
+        "angio_occlusion",
+        "nihss_alto"
+      ],
+      [
+        "neglect",
+        "hemianopsia",
+        "rm_territorial",
+        "nihss_alto"
+      ]
+    ],
+    "minimum_required": 3
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "ACV lacunar",
+      "key_exclusion_findings": [
+        "S\u00edntomas focales menores",
+        "NIHSS bajo",
+        "RM sin infarto cortical"
+      ]
+    },
+    {
+      "condition": "Crisis epil\u00e9ptica con par\u00e1lisis postictal",
+      "key_exclusion_findings": [
+        "Historia de crisis",
+        "Resoluci\u00f3n r\u00e1pida",
+        "EEG positivo"
+      ]
+    },
+    {
+      "condition": "Hipoglucemia",
+      "key_exclusion_findings": [
+        "Glucosa <50",
+        "S\u00edntomas se resuelven con glucosa"
+      ]
+    }
+  ],
+  "plan": {
+    "elegible_tpa": {
+      "tratamiento": "Administrar alteplasa IV si <4.5h desde inicio y sin contraindicaciones."
+    },
+    "elegible_trombectomia": {
+      "tratamiento": "Trombectom\u00eda si oclusi\u00f3n de gran vaso en angioTAC/angioRM, NIHSS \u22656 y ventana <24h con tejido salvable."
+    },
+    "no_elegible": {
+      "tratamiento": "Antiplaquetarios, control estricto de presi\u00f3n arterial, ingreso a unidad de ACV, iniciar rehabilitaci\u00f3n temprana."
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "condition": "Hemorragia subaracnoidea (HSA)",
+  "guideline_source": {
+    "title": "Guidelines for the Management of Aneurysmal Subarachnoid Hemorrhage",
+    "authors": "Connolly ES et al.",
+    "year": "2012 (with 2023 updates)",
+    "url": "https://www.ahajournals.org/doi/10.1161/STR.0b013e3182587839"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "Cefalea s\u00fabita en trueno (worst headache of life), inicio abrupto, n\u00e1useas, v\u00f3mito, fotofobia, rigidez de nuca.",
+      "management": "TAC sin contraste inmediata, punci\u00f3n lumbar si TAC negativa, ingreso UCI, neurocirug\u00eda si aneurisma confirmado."
+    },
+    "atypical": {
+      "description": "Cefalea gradual o leve, s\u00edncope sin focalidad, paciente somnoliento o confundido sin signos men\u00edngeos.",
+      "management": "RM cerebral con FLAIR y SWI o angio-RM. Punci\u00f3n lumbar si alta sospecha con TAC negativa.",
+      "key_additional_assessments": [
+        "Evaluar sangrado xantocr\u00f3mico (3-12h post-inicio).",
+        "AngioTAC o angiograf\u00eda digital para buscar aneurismas.",
+        "Clasificaci\u00f3n de Hunt-Hess o WFNS para guiar manejo."
+      ]
+    }
+  },
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "cefalea_en_trueno",
+        "tac_positiva",
+        "glasgow_bajo"
+      ],
+      [
+        "cefalea_en_trueno",
+        "puncion_xantocromia",
+        "meningismo"
+      ]
+    ],
+    "minimum_required": 2
+  },
+  "plan": {
+    "manejo_inicial": {
+      "acciones": [
+        "TAC inmediata",
+        "Control de PA (<140-160 mmHg)",
+        "Neuroprotecci\u00f3n y sedaci\u00f3n leve",
+        "Evitar est\u00edmulos que aumenten PIC"
+      ]
+    },
+    "manejo_diagnostico": {
+      "acciones": [
+        "PL si TAC negativa y alta sospecha",
+        "Angiograf\u00eda para localizar aneurisma",
+        "Clasificaci\u00f3n Hunt-Hess y Fisher"
+      ]
+    },
+    "manejo_definitivo": {
+      "acciones": [
+        "Clipaje quir\u00fargico o coiling endovascular del aneurisma",
+        "Prevenci\u00f3n de vasoespasmo (nimodipino)",
+        "Monitorizaci\u00f3n en UCI neurocr\u00edtica"
+      ]
+    }
+  }
+}

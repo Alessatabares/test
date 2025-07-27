@@ -1,0 +1,131 @@
+{
+  "condition": "Infarto tal\u00e1mico o capsular",
+  "guideline_source": {
+    "title": "Neuroimaging and Clinical Syndromes of Thalamic Stroke",
+    "authors": "Schmahmann JD, et al.",
+    "year": "2014",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/24571848/"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "D\u00e9ficit motor puro, sensitivo puro, o sensoriomotor; afectaci\u00f3n del estado de alerta o confusi\u00f3n s\u00fabita si t\u00e1lamo paramediano.",
+      "management": "RM con difusi\u00f3n es superior a TAC. Evaluar topograf\u00eda del t\u00e1lamo o c\u00e1psula interna. Considerar etiolog\u00eda lacunar (HTA)."
+    },
+    "atypical": {
+      "description": "Alteraciones cognitivas, trastornos del sue\u00f1o, afasia subcortical, hemibalismo.",
+      "management": "Evaluar con RM detallada; considerar compromiso bilateral en t\u00e1lamo paramediano. Buscar causa cardioemb\u00f3lica o enfermedad peque\u00f1a arterial avanzada.",
+      "key_additional_assessments": [
+        "RM con difusi\u00f3n e im\u00e1genes en plano axial fino",
+        "AngioRM o Doppler transcraneal",
+        "Monitoreo cardiovascular si bilateral"
+      ]
+    }
+  },
+  "input_groups": [
+    {
+      "group": "s\u00edntomas",
+      "inputs": [
+        {
+          "label": "D\u00e9ficit motor puro (hemiparesia sin afasia o visual)",
+          "key": "motor_puro",
+          "tag_explanation": "Cl\u00e1sico de infarto lacunar en c\u00e1psula interna posterior. Alto valor aislado.",
+          "cluster_value": "\u2191 con RM compatible y factores vasculares"
+        },
+        {
+          "label": "D\u00e9ficit sensitivo puro (hemianestesia)",
+          "key": "sensorial_puro",
+          "tag_explanation": "Lesi\u00f3n tal\u00e1mica lateral. Aumenta especificidad con topograf\u00eda en imagen.",
+          "cluster_value": "\u2191\u2191 con disestesia postinfarto"
+        },
+        {
+          "label": "Alteraci\u00f3n s\u00fabita del estado mental o somnolencia",
+          "key": "estado_alterado",
+          "tag_explanation": "Infarto bilateral paramediano o dorsomediano del t\u00e1lamo. Infrecuente pero espec\u00edfico.",
+          "cluster_value": "\u2191\u2191 con compromiso bilateral y RM positiva"
+        },
+        {
+          "label": "Trastornos del equilibrio o marcha",
+          "key": "trastorno_marcha",
+          "tag_explanation": "Puede reflejar afectaci\u00f3n sensitiva profunda. No espec\u00edfico.",
+          "cluster_value": "\u2191 con hemianestesia y RM tal\u00e1mica"
+        },
+        {
+          "label": "Afasia subcortical o anomia",
+          "key": "afasia_talamica",
+          "tag_explanation": "Infartos del t\u00e1lamo dominante. Rara pero documentada.",
+          "cluster_value": "\u2191 con hallazgos parietales o subtal\u00e1micos"
+        }
+      ]
+    },
+    {
+      "group": "imagen y exploraci\u00f3n",
+      "inputs": [
+        {
+          "label": "RM con difusi\u00f3n positiva en t\u00e1lamo o c\u00e1psula",
+          "key": "rm_talamo_capsula",
+          "tag_explanation": "Confirmaci\u00f3n diagn\u00f3stica. Mejora sensibilidad frente a TAC.",
+          "cluster_value": "\u2191\u2191\u2191 si compatible con cl\u00ednica"
+        },
+        {
+          "label": "TAC cerebral sin hallazgos agudos",
+          "key": "tac_negativa",
+          "tag_explanation": "T\u00edpico en primeras horas en lesiones profundas. Requiere RM complementaria.",
+          "cluster_value": "Com\u00fan en infartos lacunares"
+        },
+        {
+          "label": "Presi\u00f3n arterial elevada o historia de HTA",
+          "key": "hta",
+          "tag_explanation": "Factor de riesgo primario en enfermedad de peque\u00f1o vaso.",
+          "cluster_value": "\u2191\u2191 si hallazgo lacunar"
+        }
+      ]
+    }
+  ],
+  "diagnosis_logic": {
+    "clustered_findings": [
+      [
+        "motor_puro",
+        "rm_talamo_capsula",
+        "hta"
+      ],
+      [
+        "sensorial_puro",
+        "rm_talamo_capsula",
+        "tac_negativa"
+      ]
+    ],
+    "minimum_required": 2
+  },
+  "differential_diagnosis": [
+    {
+      "condition": "ACV cortical (parietal/frontal)",
+      "key_exclusion_findings": [
+        "S\u00edntomas corticales como neglect, afasia completa, hemianopsia",
+        "RM muestra afectaci\u00f3n cortical"
+      ]
+    },
+    {
+      "condition": "Convulsi\u00f3n con par\u00e1lisis postictal",
+      "key_exclusion_findings": [
+        "Historia de convulsi\u00f3n",
+        "Mejor\u00eda r\u00e1pida",
+        "Electroencefalograma anormal"
+      ]
+    },
+    {
+      "condition": "Hipoglucemia",
+      "key_exclusion_findings": [
+        "Glucosa <50",
+        "Resoluci\u00f3n completa tras correcci\u00f3n"
+      ]
+    }
+  ],
+  "plan": {
+    "manejo_est\u00e1ndar": {
+      "tratamiento": "Antiplaquetarios (aspirina), control estricto de presi\u00f3n arterial, estatinas, b\u00fasqueda de enfermedad de peque\u00f1o vaso."
+    },
+    "hallazgos_at\u00edpicos": {
+      "tratamiento": "Monitoreo neurol\u00f3gico continuo, interconsulta a neuropsicolog\u00eda si hay cambios conductuales o cognitivos."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "condition": "Ataque isqu\u00e9mico transitorio (AIT)",
+  "guideline_source": {
+    "title": "2023 AHA/ASA Guideline for the Prevention of Stroke in Patients With Stroke and Transient Ischemic Attack",
+    "authors": "Kleindorfer DO et al.",
+    "year": "2023",
+    "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000425"
+  },
+  "presentation_patterns": {
+    "typical": {
+      "description": "D\u00e9ficit neurol\u00f3gico s\u00fabito (ej. debilidad, afasia, visi\u00f3n borrosa) de duraci\u00f3n <1 h, con recuperaci\u00f3n completa.",
+      "management": "Evaluaci\u00f3n urgente en <24h. TAC para excluir sangrado. ABCD2 para estratificar riesgo. RM con difusi\u00f3n para excluir infarto silente."
+    },
+    "atypical": {
+      "description": "S\u00edntomas vagos (mareo, inestabilidad, parestesias), duraci\u00f3n >1 h pero resoluci\u00f3n completa.",
+      "management": "Evaluar con imagen avanzada (RM), excluir mimetismos (migra\u00f1a, crisis), considerar monitoreo card\u00edaco continuo y eco transesof\u00e1gico.",
+      "key_additional_assessments": [
+        "RM con DWI para detectar infarto oculto",
+        "Ecocardiograma (fuente emb\u00f3lica)",
+        "Holter 24-72h o loop recorder si sospecha de FA"
+      ]
+    }
+  },
+  "plan": {
+    "bajo_riesgo": {
+      "tratamiento": "Aspirina, evaluaci\u00f3n ambulatoria en 24-48h, estudios no invasivos de imagen y ECG."
+    },
+    "moderado_alto_riesgo": {
+      "tratamiento": "Hospitalizar, iniciar antiagregaci\u00f3n, estudios etiol\u00f3gicos completos, iniciar anticoagulaci\u00f3n si FA."
+    },
+    "hallazgos estructurales": {
+      "tratamiento": "Interconsulta para endarterectom\u00eda o cierre de foramen oval seg\u00fan causa."
+    }
+  }
+}
